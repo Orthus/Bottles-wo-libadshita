@@ -17,7 +17,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import os
 import sys
 import signal
 import gettext
@@ -28,9 +27,6 @@ localedir = "@localedir@"
 # noinspection DuplicatedCode
 gresource_path = f"{pkgdatadir}/bottles.gresource"
 sys.path.insert(1, pkgdatadir)
-
-# Remove GTK_THEME variable to prevent breakages
-os.unsetenv("GTK_THEME")
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 gettext.install('bottles', localedir)
